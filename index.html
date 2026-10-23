@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101110">
+  <meta name="description" content="Barbearia GS RISE. Escolha seu barbeiro, encontre seu horário e reserve um momento para você.">
+  <title>GS RISE — Barbearia & cuidado</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="GS RISE Barbearia, início"><img class="brand-emblem" src="assets/gs-rise-logo.svg" alt="" width="34" height="43"><span>GS RISE<small>BARBEARIA & CUIDADO</small></span></a>
+    <nav aria-label="Navegação principal"><a class="nav-active" href="#agendar">Agendar</a><button class="about-button" data-open="about-dialog">A barbearia</button><button class="bookings-button" data-open="bookings-dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 11h18m-13 5h3"/></svg><span>Meus agendamentos</span><span class="booking-count" hidden>0</span></button></nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero-photo" src="assets/barbearia.jpg" alt="O cuidado de um corte de cabelo em uma barbearia" fetchpriority="high">
+      <div class="hero-inner"><p class="eyebrow"><span></span> BOM CORTE. BOA CONVERSA.</p><h1 id="hero-title"><span class="hero-brand-name">GS RISE</span><span class="hero-tagline">Seu estilo. <em>Seu momento.</em></span></h1><p class="hero-description">O cuidado de sempre, no seu tempo.<br>Escolha seu barbeiro e deixe o resto com a gente.</p></div>
+      <div class="hero-caption"><span class="caption-line"></span> SEU ESTILO. NOSSO CUIDADO.</div>
+      <span class="hero-index" aria-hidden="true">GS RISE · BARBEARIA</span>
+    </section>
+
+    <section class="booking-section" id="agendar" aria-labelledby="booking-title">
+      <div class="section-heading"><div><p class="eyebrow">UM TEMPO SÓ SEU</p><h2 id="booking-title">Vamos marcar?</h2></div><p>Seu próximo bom corte começa aqui.</p></div>
+      <ol class="steps" aria-label="Etapas do agendamento">
+        <li><button data-step="0" aria-current="step"><span>01</span> Profissional</button></li><li><button data-step="1" disabled><span>02</span> Serviço</button></li><li><button data-step="2" disabled><span>03</span> Data e horário</button></li><li><button data-step="3" disabled><span>04</span> Seus dados</button></li>
+      </ol>
+      <div class="booking-layout">
+        <div class="booking-workspace">
+          <div id="step-panel" class="step-panel"></div>
+          <p id="form-error" class="form-error" role="alert" hidden></p>
+          <div class="step-actions"><button class="back-button" id="back-button" hidden><span aria-hidden="true">←</span> Voltar</button><span class="step-note" id="step-note">Gente boa. Mãos experientes.</span><button class="primary-button" id="next-button" disabled>Escolher serviço <span aria-hidden="true">→</span></button></div>
+        </div>
+        <aside class="summary" aria-labelledby="summary-title">
+          <div class="summary-heading"><h3 id="summary-title">Seu agendamento</h3><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 11h18m-13 5h3"/></svg></div>
+          <div class="summary-barber" id="summary-barber"><span class="empty-avatar" aria-hidden="true">✂</span><div><span class="summary-label">PROFISSIONAL</span><strong>Escolha seu barbeiro</strong></div></div>
+          <dl class="summary-details"><div><dt>Serviço</dt><dd id="summary-service">A escolher</dd></div><div><dt>Data</dt><dd id="summary-date">A escolher</dd></div><div><dt>Horário</dt><dd id="summary-time">A escolher</dd></div><div><dt>Duração estimada</dt><dd id="summary-duration">—</dd></div></dl>
+          <div class="summary-total"><span>Total</span><strong id="summary-total">R$ 0<span>,00</span></strong></div><p class="payment-note">Pagamento no dia, na barbearia.</p>
+          <div class="summary-bottom"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 8 4v6c0 5-8 8-8 8s-8-3-8-8V7zM8 12l3 3 5-6"/></svg><p>Seu momento, sem complicação.<br>Você pode cancelar quando precisar.</p></div>
+          <p class="demo-note">Demonstração · reservas salvas apenas neste navegador.</p>
+        </aside>
+      </div>
+      <div class="care-note"><p>Mais que um corte.<br><strong>Um cuidado que faz parte de você.</strong></p><span class="care-signature">GS RISE.</span></div>
+    </section>
+  </main>
+  <footer><a class="footer-brand" href="#">GS RISE<span>BARBEARIA & CUIDADO</span></a><a class="studio-link" href="https://gsstudio-eight.vercel.app/" target="_blank" rel="noopener noreferrer">Conheça a GS RISE <span aria-hidden="true">↗</span></a><span>© <span id="year"></span> GS RISE</span></footer>
+
+  <dialog id="about-dialog" aria-labelledby="about-title"><button class="close-dialog" aria-label="Fechar">×</button><p class="eyebrow">PRAZER, GS RISE.</p><h2 id="about-title">Cuidado nos detalhes.</h2><p>Um espaço para desacelerar, trocar uma ideia e sair com o visual em dia. Três profissionais, cada um com seu estilo, com o mesmo cuidado em cada atendimento.</p><div class="about-hours"><strong>Nosso horário</strong><span>Segunda a sábado · 9h às 19h</span><span>Domingos · fechado</span></div><p class="small-copy">Demonstração de agendamento criada pela GS RISE. Barbearia, profissionais e valores ilustrativos.</p><button class="primary-button close-about">Escolher meu barbeiro <span aria-hidden="true">→</span></button></dialog>
+  <dialog id="bookings-dialog" aria-labelledby="bookings-title"><button class="close-dialog" aria-label="Fechar">×</button><p class="eyebrow">SEU TEMPO RESERVADO</p><h2 id="bookings-title">Meus agendamentos</h2><p class="dialog-description">Reservas salvas neste navegador.</p><div id="bookings-list"></div></dialog>
+  <dialog id="success-dialog" aria-labelledby="success-title"><button class="close-dialog" aria-label="Fechar">×</button><div class="success-icon" aria-hidden="true">✓</div><p class="eyebrow">TUDO CERTO POR AQUI</p><h2 id="success-title">Seu momento está marcado.</h2><div id="success-details"></div><p class="small-copy">Reserva demonstrativa salva neste navegador. Nenhuma informação foi enviada à barbearia.</p><button class="primary-button" id="calendar-button">Adicionar ao calendário <span aria-hidden="true">↗</span></button><button class="text-button" id="new-booking">Fazer outro agendamento</button></dialog>
+  <dialog id="cancel-dialog" aria-labelledby="cancel-title"><button class="close-dialog" aria-label="Fechar">×</button><p class="eyebrow">MUDANÇA DE PLANOS</p><h2 id="cancel-title">Cancelar agendamento?</h2><p>Seu horário ficará disponível novamente. Você pode marcar outro quando quiser.</p><div class="cancel-actions"><button class="secondary-button" id="keep-booking">Manter reserva</button><button class="primary-button" id="confirm-cancel">Sim, cancelar</button></div></dialog>
+</body>
+</html>
