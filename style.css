@@ -41,4 +41,12 @@ dialog{border:1px solid #dedfd3;background:var(--paper);color:var(--ink);border-
 @media(max-width:1050px){.site-header{padding-inline:32px}.hero-brand-name{font-size:70px}}
 @media(max-width:540px){.site-header{padding-inline:21px}.brand{gap:9px}.brand-emblem{width:27px;height:35px}.brand>span{font-size:21px;letter-spacing:-.8px}.brand small{font-size:5.5px;letter-spacing:1.05px;margin-top:6px}.hero:after{background:linear-gradient(90deg,#101110f0 0%,#101110bd 36%,#10111050 100%)}.hero h1{margin:22px 0 18px}.hero-brand-name{font-size:clamp(55px,17vw,68px);letter-spacing:-3.7px}.hero-tagline{font-size:clamp(28px,8.2vw,35px);letter-spacing:-.7px;margin-top:6px;line-height:1.3;max-width:315px}.hero h1 em{white-space:nowrap}.hero-description{font-size:11px}.hero-link{font-size:11px}.section-heading h2{font-size:35px}.care-signature{font-size:21px}.barber-meta{font-size:7px}.footer-brand{font-size:19px}.studio-link{font-size:9px;gap:6px}footer{column-gap:18px;row-gap:17px}footer>span{margin-left:auto}}
 @media(max-width:360px){.site-header{padding-inline:16px}.brand>span{font-size:20px}.brand-emblem{width:24px;height:31px}.brand small{font-size:5px;letter-spacing:.8px}.bookings-button{font-size:8px}}
+/* No computador, preservar a cena inteira sem ampliar a foto para cobrir o banner. */
+@media(min-width:801px){
+  .hero{min-height:clamp(400px,32vw,560px);display:flex;align-items:center}
+  .hero-inner{width:100%;padding-block:48px}
+  .hero-photo{width:65%;object-fit:contain;object-position:right center;filter:grayscale(1) brightness(.9);mask-image:linear-gradient(90deg,transparent,#000 28%)}
+  .hero:after{background:linear-gradient(90deg,#101110 15%,#101110fa 36%,#10111033 66%,transparent)}
+  .hero-index{right:clamp(32px,4vw,64px)}
+}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
